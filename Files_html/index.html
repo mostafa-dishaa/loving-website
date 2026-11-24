@@ -17,7 +17,21 @@
 
 <body>
     <main class="main-container">
+
+        <!-- Left QR Code -->
+        <div class="qr-card qr-left">
+            <h4>امسحي الكود</h4>
+            <div id="qr-left"></div>
+            <p>افتحي الحكاية من هنا</p>
+            <button class="qr-download-btn" onclick="downloadQR('qr-left')">
+                <i class="fa-solid fa-download"></i>
+                تحميل QR
+            </button>
+        </div>
+
+        <!-- Main Content -->
         <div class="content">
+
             <!-- Envelope -->
             <div class="envelope">
                 <div class="letter">
@@ -25,9 +39,9 @@
                         مصطفى <span>&</span> حبيبه
                     </span>
                 </div>
-            
+
                 <div class="envelope-content"></div>
-            
+
                 <div class="envelope-seal">
                     <i class="fa-solid fa-heart"></i>
                 </div>
@@ -46,7 +60,90 @@
             <p class="description">
                 اضغطي على الزرار علشان تفتحي الحكاية
             </p>
+
         </div>
+
+        <!-- Right QR Code -->
+        <div class="qr-card qr-right">
+            <h4>امسحي الكود</h4>
+            <div id="qr-right"></div>
+            <p>افتحي الحكاية من هنا</p>
+            <button class="qr-download-btn" onclick="downloadQR('qr-left')">
+                <i class="fa-solid fa-download"></i>
+                تحميل QR
+            </button>
+        </div>
+
     </main>
+
+<!-- QR Code Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+
+    /* ==============================
+       3. Generate QR Codes
+    ============================== */
+
+    const websiteURL = "https://mostafa-dishaa.github.io/loving-website/";
+
+    // Left QR Code
+    new QRCode(document.getElementById("qr-left"), {
+        text: websiteURL,
+        width: 109,
+        height: 109,
+        colorDark: "#090909",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+
+    // Right QR Code
+    new QRCode(document.getElementById("qr-right"), {
+        text: websiteURL,
+        width: 109,
+        height: 109,
+        colorDark: "#090909",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+
+
+    /* ==============================
+       4. Download QR Code
+    ============================== */
+
+    function downloadQR(qrId) {
+
+        const qrContainer = document.getElementById(qrId);
+
+        const qrCanvas = qrContainer.querySelector("canvas");
+        const qrImage = qrContainer.querySelector("img");
+
+        let imageURL;
+
+        if (qrCanvas) {
+            imageURL = qrCanvas.toDataURL("image/png");
+        }
+        else if (qrImage) {
+            imageURL = qrImage.src;
+        }
+        else {
+            alert("QR Code is not ready yet!");
+            return;
+        }
+
+        const downloadLink = document.createElement("a");
+
+        downloadLink.href = imageURL;
+        downloadLink.download = "Loving-Website-QR.png";
+
+        document.body.appendChild(downloadLink);
+
+        downloadLink.click();
+
+        document.body.removeChild(downloadLink);
+    }
+
+</script>
 </body>
+
 </html>
