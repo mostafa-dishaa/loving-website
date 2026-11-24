@@ -1,0 +1,1114 @@
+/* ==============================
+   1. General Settings
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    min-height: 100vh;
+    background: #090909;
+    color: #fff;
+}
+
+/* ==============================
+   2. Memories Container
+============================== */
+
+.memories-container {
+    min-height: 100vh;
+
+    background-image: url("../Photo/pexels-gabby-k-5874620.jpg");
+    background-repeat: repeat-y;
+    background-position: top center;
+    background-size: auto;
+
+    position: relative;
+    isolation: isolate;
+    padding: 60px 20px;
+}
+
+.memories-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: -1;
+}
+
+/* ==============================
+   3. Story Counter Section
+============================== */
+.story-counter-section {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==============================
+   4. Counter Main Box
+============================== */
+.counter-box {
+    width: 100%;
+    max-width: 1000px;
+    padding: 45px 35px;
+    background: rgba(15, 5, 8, 0.55);
+    border: 1px solid rgba(230, 57, 70, 0.5);
+    border-radius: 18px;
+    box-shadow:
+        0 0 20px rgba(230, 57, 70, 0.12),
+        0 0 45px rgba(230, 57, 70, 0.08);
+    backdrop-filter: blur(8px);
+    text-align: center;
+}
+
+/* ==============================
+   5. Counter Heading
+============================== */
+.counter-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.counter-heading h1 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.counter-heading i {
+    color: #e63946;
+    font-size: 27px;
+    animation: heartPulse 1.8s ease-in-out infinite;
+}
+
+/* ==============================
+   6. Counter Description
+============================== */
+.counter-description {
+    margin-top: 12px;
+    font-size: 17px;
+    color: #ddd;
+}
+
+/* ==============================
+   7. Counter Subtitle
+============================== */
+.counter-subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0 35px;
+}
+
+.counter-subtitle p {
+    color: #e6a0a6;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.subtitle-line {
+    width: 45px;
+    height: 1px;
+    background: #e63946;
+    box-shadow: 0 0 8px rgba(230, 57, 70, 0.6);
+}
+
+/* ==============================
+   8. Counter Timer
+============================== */
+.counter-timer {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+}
+
+/* ==============================
+   9. Time Boxes
+============================== */
+.time-box {
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(230, 57, 70, 0.35);
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(230, 57, 70, 0.08);
+    transition: 0.3s ease;
+}
+
+.time-box:hover {
+    background: rgba(230, 57, 70, 0.1);
+    border-color: #e63946;
+    transform: translateY(-5px);
+    box-shadow: 0 0 18px rgba(230, 57, 70, 0.2);
+}
+
+.time-number {
+    font-size: 27px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.time-label {
+    font-size: 13px;
+    color: #e6a0a6;
+}
+
+/* ==============================
+   10. Heart Animation
+============================== */
+@keyframes heartPulse {
+
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 8px rgba(230, 57, 70, 0.4);
+    }
+
+    50% {
+        transform: scale(1.15);
+        text-shadow: 0 0 20px rgba(230, 57, 70, 0.9);
+    }
+
+}
+
+
+/* ==============================
+   11. Memory Music Section
+============================== */
+.memory-music-section {
+    display: flex;
+    justify-content: center;
+}
+
+/* ==============================
+   12. Music Main Box
+============================== */
+.music-box {
+    width: 100%;
+    max-width: 1000px;
+    padding: 30px 35px;
+    background: rgba(15, 5, 8, 0.55);
+    border: 1px solid rgba(230, 57, 70, 0.5);
+    border-radius: 18px;
+    box-shadow:
+        0 0 20px rgba(230, 57, 70, 0.12),
+        0 0 45px rgba(230, 57, 70, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+/* ==============================
+   13. Music Header
+============================== */
+.music-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(230, 57, 70, 0.2);
+}
+
+.music-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.music-title i {
+    color: #e63946;
+    font-size: 23px;
+}
+
+.music-title h2 {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.music-header > p {
+    color: #e6a0a6;
+    font-size: 14px;
+}
+
+/* ==============================
+   14. Music Player
+============================== */
+.music-player {
+    margin-top: 25px;
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(230, 57, 70, 0.25);
+    border-radius: 14px;
+}
+
+/* ==============================
+   15. Music Information
+============================== */
+.music-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.music-info > i {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(230, 57, 70, 0.15);
+    border: 1px solid rgba(230, 57, 70, 0.4);
+    border-radius: 12px;
+    color: #e63946;
+    font-size: 20px;
+}
+
+.music-info h3 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.music-info p {
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+/* ==============================
+   16. Music Controls
+============================== */
+.music-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* Play Button */
+#playMusicBtn {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e63946;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
+    transition: 0.3s ease;
+}
+
+#playMusicBtn:hover {
+    background: #b91f30;
+    transform: scale(1.08);
+    box-shadow: 0 0 22px rgba(230, 57, 70, 0.5);
+}
+
+/* ==============================
+   17. Music Progress
+============================== */
+.music-progress-container {
+    flex: 1;
+}
+
+#musicProgress {
+    width: 100%;
+    height: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Progress Thumb */
+#musicProgress::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    background: #e63946;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
+}
+
+#musicProgress::-moz-range-thumb {
+    width: 13px;
+    height: 13px;
+    background: #e63946;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
+}
+
+/* ==============================
+   18. Music Time
+============================== */
+.music-time {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 9px;
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* ==============================
+   19. Volume Icon
+============================== */
+/* Volume / Mute Button */
+.mute-music-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #e6a0a6;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.mute-music-btn:hover {
+    color: #e63946;
+    transform: scale(1.15);
+}
+
+.mute-music-btn i {
+    pointer-events: none;
+}
+
+
+/* ==============================
+   20. Promises & Messages Section
+============================== */
+.promises-messages-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 35px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* ==============================
+   21. Promises & Messages Boxes
+============================== */
+.promises-box,
+.messages-box {
+    width: 100%;
+    padding: 35px;
+    background: rgba(15, 5, 8, 0.55);
+    border: 1px solid rgba(230, 57, 70, 0.5);
+    border-radius: 18px;
+    box-shadow:
+        0 0 20px rgba(230, 57, 70, 0.12),
+        0 0 45px rgba(230, 57, 70, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+/* ==============================
+   22. Section Heading
+============================== */
+.section-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.section-heading h1 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.section-heading h1 i {
+    color: #e63946;
+    font-size: 23px;
+    animation: heartPulse 1.8s ease-in-out infinite;
+}
+
+.heading-line {
+    width: 65px;
+    height: 1px;
+    background: #e63946;
+    box-shadow: 0 0 8px rgba(230, 57, 70, 0.6);
+}
+
+/* ==============================
+   23. Promises Grid
+============================== */
+.promises-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* ==============================
+   24. Promise Card
+============================== */
+.promise-card {
+    min-height: 145px;
+    padding: 22px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(230, 57, 70, 0.3);
+    border-radius: 14px;
+    transition: 0.3s ease;
+}
+
+.promise-card i {
+    color: #e63946;
+    font-size: 27px;
+    transition: 0.3s ease;
+}
+
+.promise-card p {
+    color: #eee;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+.promise-card:hover {
+    background: rgba(230, 57, 70, 0.09);
+    border-color: #e63946;
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.15);
+}
+
+.promise-card:hover i {
+    transform: scale(1.15);
+    text-shadow: 0 0 15px rgba(230, 57, 70, 0.7);
+}
+
+/* ==============================
+   25. Messages Description
+============================== */
+.messages-description {
+    text-align: center;
+    color: #e6a0a6;
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 30px;
+}
+
+/* ==============================
+   26. Messages Grid
+============================== */
+.messages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* ==============================
+   27. Message Card
+============================== */
+.message-card {
+    width: 100%;
+    height: 190px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    perspective: 1000px;
+    text-align: center;
+}
+
+.message-card-inner {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+/* Flip Animation */
+.message-card.is-flipped .message-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* ==============================
+   28. Message Card Faces
+============================== */
+.message-front,
+.message-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(230, 57, 70, 0.35);
+    border-radius: 14px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* ==============================
+   29. Message Front
+============================== */
+.message-front i {
+    color: #e63946;
+    font-size: 35px;
+    transition: 0.3s ease;
+}
+
+.message-front span {
+    color: #e6a0a6;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.message-card:hover .message-front {
+    border-color: #e63946;
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.15);
+}
+
+.message-card:hover .message-front i {
+    transform: scale(1.15);
+    text-shadow: 0 0 15px rgba(230, 57, 70, 0.6);
+}
+
+/* ==============================
+   30. Message Back
+============================== */
+.message-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(
+        145deg,
+        rgba(57, 11, 22, 0.9),
+        rgba(18, 6, 9, 0.95)
+    );
+    border-color: rgba(230, 57, 70, 0.65);
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.12);
+}
+
+.message-back i {
+    color: #e63946;
+    font-size: 25px;
+    text-shadow: 0 0 12px rgba(230, 57, 70, 0.5);
+}
+
+.message-back span {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.9;
+}
+
+
+
+/* ==============================
+   9. Special Memory Section
+============================== */
+.special-memory-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 35px auto 0;
+}
+
+.special-memory-box {
+    width: 100%;
+    min-height: 350px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    background: rgba(15, 5, 8, 0.55);
+    border: 1px solid rgba(230, 57, 70, 0.5);
+    border-radius: 18px;
+    box-shadow:
+        0 0 20px rgba(230, 57, 70, 0.12),
+        0 0 45px rgba(230, 57, 70, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+/* Image Right */
+.special-memory-image {
+    width: 45%;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(230, 57, 70, 0.4);
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.15);
+}
+
+.special-memory-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: 0.5s ease;
+}
+
+.special-memory-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Content Left */
+.special-memory-content {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+}
+
+.special-memory-content h1 {
+    color: #fff;
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.8;
+}
+
+.special-memory-icon {
+    color: #fff;
+    font-size: 120px;
+    text-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
+    transition: 0.4s ease;
+}
+
+.special-memory-icon:hover {
+    color: #e63946;
+    transform: scale(1.1);
+}
+
+
+
+/* ==============================
+   10. Photo Gallery Section
+============================== */
+.photo-gallery-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 35px auto 0;
+    padding: 35px;
+    background: rgba(15, 5, 8, 0.55);
+    border: 1px solid rgba(230, 57, 70, 0.5);
+    border-radius: 18px;
+    box-shadow:
+        0 0 20px rgba(230, 57, 70, 0.12),
+        0 0 45px rgba(230, 57, 70, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+/* ==============================
+   Gallery Heading
+============================== */
+.gallery-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.gallery-heading h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.gallery-heading h1 i {
+    color: #e63946;
+    font-size: 23px;
+    animation: heartPulse 1.8s ease-in-out infinite;
+}
+
+.gallery-line {
+    width: 65px;
+    height: 1px;
+    background: #e63946;
+    box-shadow: 0 0 8px rgba(230, 57, 70, 0.6);
+}
+
+/* ==============================
+   Gallery Description
+============================== */
+.gallery-description {
+    text-align: center;
+    color: #e6a0a6;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+/* ==============================
+   Gallery Grid
+============================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+/* ==============================
+   Gallery Card
+============================== */
+.gallery-card {
+    width: 100%;
+    height: 300px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(230, 57, 70, 0.3);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+/* ==============================
+   Gallery Image
+============================== */
+.gallery-card img {
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    border-radius: 8px;
+    transition: 0.4s ease;
+}
+
+/* ==============================
+   Hover Effect
+============================== */
+.gallery-card:hover {
+    border-color: #e63946;
+    box-shadow:
+        0 0 15px rgba(230, 57, 70, 0.15),
+        0 0 25px rgba(230, 57, 70, 0.08);
+    transform: translateY(-5px);
+}
+
+.gallery-card:hover img {
+    transform: scale(1.03);
+}
+
+
+/* ==============================
+   10. Video Gallery
+============================== */
+
+.video-gallery-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 35px auto 0;
+    padding: 35px;
+    background: rgba(15, 5, 8, 0.55);
+    border: 1px solid rgba(230, 57, 70, 0.5);
+    border-radius: 18px;
+    box-shadow:
+        0 0 20px rgba(230, 57, 70, 0.12),
+        0 0 45px rgba(230, 57, 70, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+
+/* Heading */
+.video-gallery-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.video-gallery-heading h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.video-gallery-heading h1 i {
+    color: #e63946;
+    font-size: 23px;
+}
+
+.video-gallery-line {
+    width: 65px;
+    height: 1px;
+    background: #e63946;
+    box-shadow: 0 0 8px rgba(230, 57, 70, 0.6);
+}
+
+
+/* Description */
+.video-gallery-description {
+    text-align: center;
+    color: #e6a0a6;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+
+/* Videos Grid */
+.video-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Video Card */
+
+.video-card {
+    width: 100%;
+    padding: 12px;
+
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(230, 57, 70, 0.3);
+    border-radius: 14px;
+
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+
+/* Video */
+
+.video-card video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    display: block;
+    object-fit: contain;
+
+    border-radius: 8px;
+    background: #000;
+}
+
+
+/* Hover */
+
+.video-card:hover {
+    border-color: #e63946;
+
+    box-shadow:
+        0 0 15px rgba(230, 57, 70, 0.15),
+        0 0 25px rgba(230, 57, 70, 0.08);
+
+    transform: translateY(-5px);
+}
+
+/* ==============================
+   11. Final Love Letter
+============================== */
+.final-letter-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 50px auto 0;
+    padding: 50px 35px;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Main Box */
+.final-letter-box {
+    width: 100%;
+    padding: 55px 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(120, 15, 35, 0.25),
+            transparent 55%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(25, 8, 13, 0.98),
+            rgba(8, 8, 8, 0.98)
+        );
+    border: 1px solid rgba(230, 57, 70, 0.55);
+    border-radius: 25px;
+    box-shadow:
+        0 0 25px rgba(230, 57, 70, 0.12),
+        0 0 60px rgba(230, 57, 70, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Heart Icon */
+.final-letter-icon {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(230, 57, 70, 0.12);
+    border: 1px solid rgba(230, 57, 70, 0.4);
+    border-radius: 50%;
+    color: #e63946;
+    font-size: 30px;
+    box-shadow: 0 0 25px rgba(230, 57, 70, 0.2);
+    animation: heartPulse 1.8s ease-in-out infinite;
+}
+
+
+/* Heading */
+.final-letter-box h1 {
+    margin-top: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 800;
+}
+
+
+/* Subtitle */
+.final-letter-subtitle {
+    margin-top: 12px;
+    color: #e6a0a6;
+    font-size: 15px;
+}
+
+
+/* Divider */
+.final-letter-divider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.final-letter-divider span {
+    width: 90px;
+    height: 1px;
+    background: #e63946;
+    box-shadow: 0 0 8px rgba(230, 57, 70, 0.6);
+}
+
+.final-letter-divider i {
+    color: #e63946;
+    font-size: 16px;
+}
+
+
+/* Letter Content + Reveal Animation */
+.final-letter-content {
+    width: 100%;
+    min-height: 200px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(230, 57, 70, 0.2);
+    border-radius: 15px;
+    color: #fff;
+    font-size: 17px;
+    line-height: 2.2;
+    text-align: right;
+    /* Animation */
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 2.5s ease, opacity 0.8s ease;
+}
+
+.final-letter-content.show-letter {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+}
+
+/* Back To Beginning Button */
+.back-to-beginning {
+    margin-top: 35px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #e63946, #a71930);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.2);
+    transition: 0.3s ease;
+}
+
+.back-to-beginning:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 20px rgba(230, 57, 70, 0.4),
+        0 0 35px rgba(230, 57, 70, 0.2);
+}
+
+.back-to-beginning i {
+    font-size: 18px;
+}
+
+/* ==============================
+   12. Back To Top Button
+============================== */
+.back-to-top {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(230, 57, 70, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 18px rgba(230, 57, 70, 0.3);
+    transition: 0.3s ease;
+}
+
+.back-to-top:hover {
+    background: #b91f30;
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(230, 57, 70, 0.5);
+}

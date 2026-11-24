@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ذكرياتنا | مصطفى & حبيبة</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../Files_css/memories.css">
+</head>
+
+<body>
+    <main class="memories-container">
+        <!-- Our Story Counter Section -->
+        <section class="story-counter-section">
+    
+            <div class="counter-box">
+    
+                <!-- Heading -->
+                <div class="counter-heading">
+                    <h1>حكايتنا</h1>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+    
+                <!-- Description -->
+                <p class="counter-description">
+                    كل لحظة معاكي هي عمر جديد
+                </p>
+    
+                <!-- Subtitle -->
+                <div class="counter-subtitle">
+                    <span class="subtitle-line"></span>
+                    <p>منذ أن بدأت القصة</p>
+                    <span class="subtitle-line"></span>
+                </div>
+    
+                <!-- Counter -->
+                <div class="counter-timer">
+    
+                    <div class="time-box">
+                        <span class="time-number" id="years">0</span>
+                        <span class="time-label">السنين</span>
+                    </div>
+    
+                    <div class="time-box">
+                        <span class="time-number" id="months">0</span>
+                        <span class="time-label">الشهور</span>
+                    </div>
+    
+                    <div class="time-box">
+                        <span class="time-number" id="weeks">0</span>
+                        <span class="time-label">الأسابيع</span>
+                    </div>
+    
+                    <div class="time-box">
+                        <span class="time-number" id="days">0</span>
+                        <span class="time-label">الأيام</span>
+                    </div>
+    
+                    <div class="time-box">
+                        <span class="time-number" id="hours">0</span>
+                        <span class="time-label">الساعات</span>
+                    </div>
+    
+                    <div class="time-box">
+                        <span class="time-number" id="minutes">0</span>
+                        <span class="time-label">الدقائق</span>
+                    </div>
+    
+                    <div class="time-box">
+                        <span class="time-number" id="seconds">0</span>
+                        <span class="time-label">الثواني</span>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </section>
+<!-- ==============================
+     Memory Music Section
+============================== -->
+<section class="memory-music-section">
+
+    <div class="music-box">
+
+        <!-- Music Header -->
+        <div class="music-header">
+
+            <div class="music-title">
+                <i class="fa-solid fa-music"></i>
+                <h2>موسيقى الذكرى</h2>
+            </div>
+
+            <p>شغليها وقت ما تحبي</p>
+
+        </div>
+
+        <!-- Music Player -->
+        <div class="music-player">
+
+            <div class="music-info">
+                <i class="fa-solid fa-heart"></i>
+
+                <div>
+                    <h3>حبوبتي</h3>
+                    <p>الاغنيه اللي بتحبيها</p>
+                </div>
+            </div>
+
+            <!-- Audio -->
+            <audio id="memoryAudio">
+                <source src="../Music/10_-_Ma3_El_Ayam.mp3" type="audio/mpeg">
+                متصفحك لا يدعم تشغيل الصوت.
+            </audio>
+
+            <!-- Player Controls -->
+            <div class="music-controls">
+
+                <button type="button" id="playMusicBtn">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+
+                <div class="music-progress-container">
+
+                    <input type="range" id="musicProgress" value="0" min="0" max="100">
+
+                    <div class="music-time">
+                        <span id="currentTime">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+
+                </div>
+
+                <button type="button" id="muteMusicBtn" class="mute-music-btn">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==============================
+     Promises & Messages Section
+============================== -->
+<section class="promises-messages-section">
+
+    <!-- ==============================
+         Part 1: Promises
+    ============================== -->
+
+    <div class="promises-box">
+
+        <!-- Section Heading -->
+        <div class="section-heading">
+
+            <span class="heading-line"></span>
+
+            <h1>
+                وعود من القلب
+                <i class="fa-solid fa-heart"></i>
+            </h1>
+
+            <span class="heading-line"></span>
+
+        </div>
+
+        <!-- Promises Cards -->
+        <div class="promises-grid">
+
+            <div class="promise-card">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <p>هفضل سندك في كل وقت</p>
+            </div>
+
+            <div class="promise-card">
+                <i class="fa-solid fa-shield-heart"></i>
+                <p>هكون دايمًا أمانك وضحكتك</p>
+            </div>
+
+            <div class="promise-card">
+                <i class="fa-solid fa-infinity"></i>
+                <p>حبنا ملوش نهاية... وعد</p>
+            </div>
+
+            <div class="promise-card">
+                <i class="fa-solid fa-ear-listen"></i>
+                <p>هسمعك وأفهمك في كل وقت</p>
+            </div>
+
+            <div class="promise-card">
+                <i class="fa-solid fa-star"></i>
+                <p>هفضل أشجعك تحققي أحلامك</p>
+            </div>
+
+            <div class="promise-card">
+                <i class="fa-solid fa-heart-circle-check"></i>
+                <p>هحافظ على تفاصيل حكايتنا</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         Part 2: Small Messages
+    ============================== -->
+
+    <div class="messages-box">
+
+        <!-- Section Heading -->
+        <div class="section-heading">
+
+            <span class="heading-line"></span>
+
+            <h1>
+                رسايل صغيرة
+                <i class="fa-solid fa-heart"></i>
+            </h1>
+
+            <span class="heading-line"></span>
+
+        </div>
+
+        <p class="messages-description">
+            كل كارت جواه رسالة صغيرة ليكي
+        </p>
+
+<!-- Messages Cards -->
+<div class="messages-grid">
+
+    <!-- Message 1 -->
+    <button type="button" class="message-card" aria-pressed="false">
+        <span class="message-card-inner">
+            <span class="message-front">
+                <i class="fa-solid fa-envelope"></i>
+                <span>افتحي الرسالة</span>
+            </span>
+            <span class="message-back">
+                <i class="fa-solid fa-heart"></i>
+                <span>وجودك بيخلي أبسط الأيام أجمل.</span>
+            </span>
+        </span>
+    </button>
+
+    <!-- Message 2 -->
+    <button type="button" class="message-card" aria-pressed="false">
+        <span class="message-card-inner">
+            <span class="message-front">
+                <i class="fa-solid fa-star"></i>
+                <span>افتحي الرسالة</span>
+            </span>
+            <span class="message-back">
+                <i class="fa-solid fa-star"></i>
+                <span>ضحكتك من التفاصيل اللي بتفرحني.</span>
+            </span>
+        </span>
+    </button>
+
+    <!-- Message 3 -->
+    <button type="button" class="message-card" aria-pressed="false">
+        <span class="message-card-inner">
+            <span class="message-front">
+                <i class="fa-solid fa-gift"></i>
+                <span>افتحي الرسالة</span>
+            </span>
+            <span class="message-back">
+                <i class="fa-solid fa-heart"></i>
+                <span>كل ذكرى معاكي ليها مكانة خاصة.</span>
+            </span>
+        </span>
+    </button>
+
+    <!-- Message 4 -->
+    <button type="button" class="message-card" aria-pressed="false">
+        <span class="message-card-inner">
+            <span class="message-front">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>افتحي الرسالة</span>
+            </span>
+            <span class="message-back">
+                <i class="fa-solid fa-heart-circle-check"></i>
+                <span>بتمنالك أيام مليانة فرحة ونجاح.</span>
+            </span>
+        </span>
+    </button>
+
+    <!-- Message 5 -->
+    <button type="button" class="message-card" aria-pressed="false">
+        <span class="message-card-inner">
+            <span class="message-front">
+                <i class="fa-solid fa-camera"></i>
+                <span>افتحي الرسالة</span>
+            </span>
+            <span class="message-back">
+                <i class="fa-solid fa-images"></i>
+                <span>نفسي نفضل نضيف ذكريات حلوة لحكايتنا.</span>
+            </span>
+        </span>
+    </button>
+
+    <!-- Message 6 -->
+    <button type="button" class="message-card" aria-pressed="false">
+        <span class="message-card-inner">
+            <span class="message-front">
+                <i class="fa-solid fa-lock"></i>
+                <span>افتحي الرسالة</span>
+            </span>
+            <span class="message-back">
+                <i class="fa-solid fa-heart"></i>
+                <span>في تفاصيل صغيرة بتفكرني قد إيه وجودك مميز.</span>
+            </span>
+        </span>
+    </button>
+
+    <!-- Message 7 -->
+    <button type="button" class="message-card" aria-pressed="false">
+        <span class="message-card-inner">
+            <span class="message-front">
+                <i class="fa-solid fa-hourglass-half"></i>
+                <span>افتحي الرسالة</span>
+            </span>
+            <span class="message-back">
+                <i class="fa-solid fa-heart"></i>
+                <span>كل حاجه تهون الا الوقت من غيرك</span>
+            </span>
+        </span>
+    </button>
+
+    <!-- Message 8 -->
+    <button type="button" class="message-card" aria-pressed="false">
+        <span class="message-card-inner">
+            <span class="message-front">
+                <i class="fa-solid fa-moon"></i>
+                <span>افتحي الرسالة</span>
+            </span>
+            <span class="message-back">
+                <i class="fa-solid fa-heart"></i>
+                <span>مفيش على الارض كلها قمر زي اللي في عيونك</span>
+            </span>
+        </span>
+    </button>
+
+    <!-- Message 9 -->
+    <button type="button" class="message-card" aria-pressed="false">
+        <span class="message-card-inner">
+            <span class="message-front">
+                <i class="fa-solid fa-gift"></i>
+                <span>افتحي الرسالة</span>
+            </span>
+            <span class="message-back">
+                <i class="fa-solid fa-heart"></i>
+                <span>لو كان حبك مرض ربنا ميشفنيش منه</span>
+            </span>
+        </span>
+    </button>
+
+    <!-- Message 10 -->
+    <button type="button" class="message-card" aria-pressed="false">
+        <span class="message-card-inner">
+            <span class="message-front">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>افتحي الرسالة</span>
+            </span>
+            <span class="message-back">
+                <i class="fa-solid fa-heart"></i>
+                <span>هتفضلي اجمل واحده شافتها عيني</span>
+            </span>
+        </span>
+    </button>
+
+    <!-- Message 11 -->
+    <button type="button" class="message-card" aria-pressed="false">
+        <span class="message-card-inner">
+            <span class="message-front">
+                <i class="fa-solid fa-camera"></i>
+                <span>افتحي الرسالة</span>
+            </span>
+            <span class="message-back">
+                <i class="fa-solid fa-heart"></i>
+                <span>عمري ما هحب واحده بعدك انتي ختمتي كل حاجه فقلبي</span>
+            </span>
+        </span>
+    </button>
+
+    <!-- Message 12 -->
+    <button type="button" class="message-card" aria-pressed="false">
+        <span class="message-card-inner">
+            <span class="message-front">
+                <i class="fa-solid fa-lock"></i>
+                <span>افتحي الرسالة</span>
+            </span>
+            <span class="message-back">
+                <i class="fa-solid fa-heart"></i>
+                <span>عمري ما هبطل احبك</span>
+            </span>
+        </span>
+    </button>
+
+</div>
+
+
+    </div>
+
+</section>
+
+<!-- Section 4: Special Memory -->
+<section class="special-memory-section">
+
+    <div class="special-memory-box">
+
+        <!-- Image Right -->
+        <div class="special-memory-image">
+            <img src="../Photo/WhatsApp Image 2026-11-23 at 9.42.48 PM.jpeg" alt="ذكرى مميزة">
+        </div>
+
+        <!-- Content Left -->
+        <div class="special-memory-content">
+
+            <h1>شوفت قد إيه وقتها انتي خايفة عليا</h1>
+
+            <i class="fa-solid fa-h special-memory-icon"></i>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Section 5: Photo Gallery -->
+<section class="photo-gallery-section">
+
+    <div class="gallery-heading">
+
+        <span class="gallery-line"></span>
+
+        <h1>صور من الحكاية <i class="fa-solid fa-heart"></i></h1>
+
+        <span class="gallery-line"></span>
+
+    </div>
+
+    <p class="gallery-description">
+        كل صورة هنا جزء صغير من الحكاية
+    </p>
+
+    <div class="gallery-grid">
+
+        <!-- الصور هنضيفها هنا بعدين -->
+
+    </div>
+
+</section>
+
+<!-- Section 6: Video Gallery -->
+<section class="video-gallery-section">
+
+    <!-- Heading -->
+    <div class="video-gallery-heading">
+        <span class="video-gallery-line"></span>
+
+        <h1>
+            فيديوهات من الحكاية
+            <i class="fa-solid fa-video"></i>
+        </h1>
+
+        <span class="video-gallery-line"></span>
+    </div>
+
+    <!-- Description -->
+    <p class="video-gallery-description">
+        لحظات حلوة تستاهل نعيشها من جديد
+    </p>
+
+    <!-- Videos Grid -->
+    <div class="video-gallery-grid">
+
+    </div>
+
+</section>
+
+<!-- Section 7: Final Love Letter -->
+<section class="final-letter-section">
+
+    <div class="final-letter-box">
+
+        <div class="final-letter-icon">
+            <i class="fa-solid fa-heart"></i>
+        </div>
+
+        <h1>رسالة من القلب</h1>
+
+        <p class="final-letter-subtitle">
+            كل كلمه كتبتها كانت طالعه من قلبي ي حبوبتي
+        </p>
+
+        <div class="final-letter-divider">
+            <span></span>
+            <i class="fa-solid fa-heart"></i>
+            <span></span>
+        </div>
+
+        <!-- Your Love Letter -->
+        <div class="final-letter-content">
+
+            عايز اقولك انك مش مجرد بنت بحبها انتي الحياه اللي اتمنيتها من سنين انتي الحلم اللي صحيت عليه ولقيته قدامي انتي الأمان
+            اللي قلبي ارتاح فيه والدفا اللي حس بيه انتي أجمل من كل الكلام اللي بيتقال واحن من كل حضن اتخيلته انتي مش بس حبيبتي انتي
+            دنيتي انتي اختي و روحي انتي ملاكي اللي ربنا بعتو ليا من أول ما عرفتك وانا مش زي زمان كل حاجه بقت ليها طعم تاني الضحكه
+            بقت من القلب والدنيا بقت فيها أمل بقيت بصحى وانا مبسوط عشان انتي في حياتي بقيت بحب اليوم اللي بيعدي وانتي فيه . بقيت
+            بضحك على حاجات بسيطة لان وجودك بيكفيني بقيت بدعي من قلبي انك تفضلي معايا العمر كله انتي اللي غيرتيني للأحسن انتي اللي
+            خلتيني أعرف يعني ايه حب حقيقي انتي النور اللي دخل قلبي ومفارقنيش لما بشوفك بضحك من غير ما أحس لما بسمع صوتك بتهدى كل
+            حاجة جوايا لما تبعتيلي مسدج قلبي بيرقص لما بتقوليلي وحشتني بحس اني أسعد إنسان انتي كل حاجه حلوة حصلتلي انتي اللي بخاف
+            عليها من الهوا انتي اللي بحس اني مش عايز منها غير رضاها انا بحب كل تفاصيلك بحب صوتك بحب ضحكّتك بحب عصبيتك بحب طريقتك
+            وانتي بتزعلي وبتصالحيني بعدها زي الأطفال بحبك لما بتغيري عليا وبحب طيبة قلبك بحب عيونك وبحب خوفك عليا ب اهتمامك بيا انتي
+            سبب ضحكتي انتي سندي في الوجع انتي كتفي. + انتي قلبي اللي دق عشانك كل ثانيه انتي بتملي حياتي فرحه وضحكة حقيقية من القلب
+            انتي ملاك نزل عشاني انتي هدية ربنا ليا انا كل يوم بدعى انك تفضلي ليا كل يوم بشكر ربنا أنك في حياتي كل يوم بحبك أكثر كل
+            ثانيه بتمر وانتي فيها تكون أغلى من اللي قبلها انتي بتمثليلي حاجات كتير ميتكتبش عنها غير في كتب انتي معجزه حقيقية وجودك
+            شفاء لقلبي وانتي روحي اللي سكنت جوايا نظرتك لما بتبصيلي كأني أهم حاجه في حياتك بحب خوفك عليا واهتمامك بيا انتي الشخص
+            اللي بدعي يفضل معايا للآخر ده انتي اللي نفسي أعيش معاكي كل لحظه انتي اللي بستني اسمع صوتك كل يوم وكأنها أول مرة انتي
+            الحب آللي مستحيل تتكرري انتي حبيبتي . انتي حبيبتي اللي بحبها من غير سبب انتي اللي لو الدنيا كلها اتغيرت هتفضلي ثابتة جوا
+            قلبي انتي اللي وجودك بيهون عليا كل حاجه انتي اللي بفتكرها اول ما اصحى وآخر ما انام انتي احن حب واطيب قلب انتي روحي وسر
+            سعادتي وسبب ضحكتي لو عشت الف سنه معاكي مش هيكفيني انتي احلى واجمل من اي وصف وكلمه انتي دنيتي اللي بحمد ربنا عليها كل
+            لحظه بحبك وهفضل احبك وعمري ما هبطل احبك واحميكي من اي حاجه وهفضل ادعي ربنا انه يجمعني بيكي علطول بحبك ي كل حاجه حلوه
+            حصلتلي بحبك ي نور عيني بحبك ي حبوبتي 😂❤️
+            ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️🌍🌍🌍🌍🌍🌍🌍🌍🌍🫂🫂🫂
+
+        </div>
+
+        <!-- Back To Beginning -->
+        <a href="index.html" class="back-to-beginning">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <span>دوسي علشان ترجعي من الأول يا حبوبتي</span>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- Back To Top Button -->
+<button class="back-to-top" id="backToTop" type="button">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+    </main>
+    <!-- JavaScript -->
+    <script src="../Files_js/script.js" defer></script>
+</body>
+</html>

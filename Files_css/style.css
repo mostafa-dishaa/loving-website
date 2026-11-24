@@ -1,0 +1,329 @@
+
+/* ==============================
+   1. General Settings
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    min-height: 100vh;
+    background: #090909;
+    color: #fff;
+}
+
+/* ==============================
+   2. Main Container
+============================== */
+
+.main-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    background-image: url("../Photo/pexels-gabby-k-5874620.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    isolation: isolate;
+}
+
+.main-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    z-index: -1;
+}
+
+/* ==============================
+   3. Content
+============================== */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    gap: 22px;
+}
+
+/* ==============================
+   4. Envelope
+============================== */
+
+.envelope {
+    width: 300px;
+    height: 200px;
+
+    background: linear-gradient(
+        145deg,
+        #280910,
+        #120609
+    );
+
+    border: 1px solid #8b1728;
+    border-radius: 5px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+        0 0 20px rgba(230, 57, 70, 0.15),
+        0 0 40px rgba(230, 57, 70, 0.08);
+
+    animation:
+        envelopeEntrance 1.5s ease both,
+        envelopeFloat 2.2s ease-in-out 1.5s infinite;
+}
+
+/* ==============================
+   5. Letter Inside Envelope
+============================== */
+
+.letter {
+    position: absolute;
+
+    width: 85%;
+    height: 85%;
+
+    background: #f5eeee;
+
+    top: 40%;
+    left: 50%;
+
+    transform: translate(-50%, 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 4px;
+
+    z-index: 3;
+
+    opacity: 0;
+    visibility: hidden;
+
+    animation: letterAppear 1.5s ease 1s forwards;
+}
+
+.letter .couple-names {
+    color: #1a080b;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    padding: 8px 15px;
+
+    border-top: 1px solid #e63946;
+    border-bottom: 1px solid #e63946;
+}
+
+.letter .couple-names span {
+    color: #e63946;
+}
+
+/* ==============================
+   6. Letter Appearance Animation
+============================== */
+
+@keyframes letterAppear {
+
+    from {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-50%, -100%);
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -75%);
+    }
+
+}
+
+/* ==============================
+   7. Envelope Front
+============================== */
+
+.envelope-content {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        145deg,
+        #390b16,
+        #16060a
+    );
+
+    clip-path: polygon(
+        0 0,
+        50% 55%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    z-index: 2;
+}
+
+/* ==============================
+   8. Envelope Seal
+============================== */
+
+.envelope-seal {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 42px;
+    height: 42px;
+
+    background: #e63946;
+
+    border: 2px solid #8b1728;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 18px rgba(230, 57, 70, 0.5);
+
+    z-index: 4;
+
+    animation: heartPulse 1.8s ease-in-out infinite;
+}
+
+.envelope-seal i {
+    color: #fff;
+    font-size: 17px;
+}
+
+/* ==============================
+   9. Envelope Entrance Animation
+============================== */
+
+@keyframes envelopeEntrance {
+
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* ==============================
+   10. Envelope Floating Animation
+============================== */
+
+@keyframes envelopeFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+/* ==============================
+   11. Heart Glow Animation
+============================== */
+
+@keyframes heartPulse {
+
+    0%, 100% {
+        box-shadow: 0 0 12px rgba(230, 57, 70, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 28px rgba(230, 57, 70, 0.9);
+    }
+
+}
+
+/* ==============================
+   12. Couple Title
+============================== */
+
+.couple-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* ==============================
+   13. Open Letter Button
+============================== */
+
+.open-letter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 12px 30px;
+
+    background: #e63946;
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.2);
+}
+
+.open-letter-btn:hover {
+    background: #b91f30;
+
+    box-shadow: 0 0 25px rgba(230, 57, 70, 0.5);
+
+    transform: translateY(-3px);
+}
+
+/* ==============================
+   14. Description
+============================== */
+
+.description {
+    font-size: 14px;
+    color: #ccc;
+}
+
