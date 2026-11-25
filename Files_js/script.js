@@ -227,80 +227,108 @@ messageCards.forEach(function (card) {
     });
 });
 
+
 /* ==============================
-   9. Photo Gallery
+   9. Photo Gallery - Load More
 ============================== */
+
 const galleryGrid = document.querySelector(".gallery-grid");
+const loadMoreImagesBtn = document.getElementById("loadMoreImages");
 
-if (galleryGrid) {
+if (galleryGrid && loadMoreImagesBtn) {
 
-    // Total Number Of Photos
-    const totalImages = 622;
+    const totalImages = 624;
+    const imagesPerLoad = 15;
 
-    // Create All Images
-    for (let i = 1; i <= totalImages; i++) {
+    let currentImage = 1;
 
-        // Create Gallery Card
-        const galleryCard = document.createElement("div");
-        galleryCard.classList.add("gallery-card");
+    function loadImages() {
 
-        // Create Image
-        const galleryImage = document.createElement("img");
+        const endImage = Math.min(
+            currentImage + imagesPerLoad - 1,
+            totalImages
+        );
 
-        // Image Path
-        galleryImage.src = `../Photo/photo (${i}).jpeg`;
+        for (let i = currentImage; i <= endImage; i++) {
 
-        // Image Alt
-        galleryImage.alt = `صورة من الحكاية رقم ${i}`;
+            const galleryCard = document.createElement("div");
+            galleryCard.classList.add("gallery-card");
 
-        // Lazy Loading
-        galleryImage.loading = "lazy";
+            const galleryImage = document.createElement("img");
 
-        // Add Image To Card
-        galleryCard.appendChild(galleryImage);
+            galleryImage.src = `../Photo/photo (${i}).jpeg`;
+            galleryImage.alt = `صورة من الحكاية رقم ${i}`;
+            galleryImage.loading = "lazy";
 
-        // Add Card To Gallery
-        galleryGrid.appendChild(galleryCard);
+            galleryCard.appendChild(galleryImage);
+            galleryGrid.appendChild(galleryCard);
+        }
+
+        currentImage = endImage + 1;
+
+        if (currentImage > totalImages) {
+            loadMoreImagesBtn.style.display = "none";
+        }
     }
+
+    // Load First 15 Images
+    loadImages();
+
+    // Load 15 More Images On Click
+    loadMoreImagesBtn.addEventListener("click", loadImages);
 }
 
 
 /* ==============================
-   10. Video Gallery
+   10. Video Gallery - Load More
 ============================== */
 const videoGalleryGrid = document.querySelector(".video-gallery-grid");
+const loadMoreVideosBtn = document.getElementById("loadMoreVideos");
 
-if (videoGalleryGrid) {
+if (videoGalleryGrid && loadMoreVideosBtn) {
 
-    // Total Number Of Videos
     const totalVideos = 483;
+    const videosPerLoad = 5;
 
-    // Create All Videos
-    for (let i = 1; i <= totalVideos; i++) {
+    let currentVideo = 1;
 
-        // Create Video Card
-        const videoCard = document.createElement("div");
-        videoCard.classList.add("video-card");
+    function loadVideos() {
 
-        // Create Video Element
-        const video = document.createElement("video");
+        const endVideo = Math.min(
+            currentVideo + videosPerLoad - 1,
+            totalVideos
+        );
 
-        // Video Path
-        video.src = `../Video/video(${i}).mp4`;
+        for (let i = currentVideo; i <= endVideo; i++) {
 
-        // Video Controls
-        video.controls = true;
+            const videoCard = document.createElement("div");
+            videoCard.classList.add("video-card");
 
-        // Video Preload
-        video.preload = "metadata";
+            const video = document.createElement("video");
 
-        // Add Video To Card
-        videoCard.appendChild(video);
+            video.src = `../Video/video(${i}).mp4`;
+            video.poster = `../Video/posters/video(${i}).jpg`;
 
-        // Add Card To Gallery
-        videoGalleryGrid.appendChild(videoCard);
+            video.controls = true;
+            video.preload = "none";
+
+            videoCard.appendChild(video);
+            videoGalleryGrid.appendChild(videoCard);
+        }
+
+        currentVideo = endVideo + 1;
+
+        if (currentVideo > totalVideos) {
+            loadMoreVideosBtn.style.display = "none";
+        }
     }
+
+    // Load First 5 Videos
+    loadVideos();
+    // Load 5 More Videos On Click
+    loadMoreVideosBtn.addEventListener("click", loadVideos);
 }
+
 
 
 /* ==============================
@@ -319,7 +347,6 @@ backToTopBtn.addEventListener("click", function () {
 /* ==============================
    13. Final Letter Reveal
 ============================== */
-
 const finalLetter = document.querySelector(".final-letter-content");
 const finalLetterSection = document.querySelector(".final-letter-section");
 
@@ -344,7 +371,5 @@ if (finalLetter && finalLetterSection) {
     }, {
         threshold: 0
     });
-
     letterObserver.observe(finalLetterSection);
-
 }

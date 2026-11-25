@@ -1,4 +1,3 @@
-
 /* ==============================
    1. General Settings
 ============================== */
@@ -19,21 +18,18 @@ body {
 /* ==============================
    2. Main Container
 ============================== */
-
 .main-container {
     min-height: 100vh;
-
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    gap: 80px;
     padding: 30px 20px;
-
     background-image: url("../Photo/pexels-gabby-k-5874620.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     position: relative;
     isolation: isolate;
 }
@@ -42,52 +38,43 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-
     background: rgba(0, 0, 0, 0.65);
-
     z-index: -1;
 }
 
 /* ==============================
-   3. Content
+   3. Content - Left Side
 ============================== */
-
 .content {
+    order: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-
     text-align: center;
     gap: 22px;
+    flex-shrink: 0;
 }
 
 /* ==============================
    4. Envelope
 ============================== */
-
 .envelope {
     width: 300px;
     height: 200px;
-
     background: linear-gradient(
         145deg,
         #280910,
         #120609
     );
-
     border: 1px solid #8b1728;
     border-radius: 5px;
-
     position: relative;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     box-shadow:
         0 0 20px rgba(230, 57, 70, 0.15),
         0 0 40px rgba(230, 57, 70, 0.08);
-
     animation:
         envelopeEntrance 1.5s ease both,
         envelopeFloat 2.2s ease-in-out 1.5s infinite;
@@ -96,42 +83,29 @@ body {
 /* ==============================
    5. Letter Inside Envelope
 ============================== */
-
 .letter {
     position: absolute;
-
     width: 85%;
     height: 85%;
-
     background: #f5eeee;
-
     top: 40%;
     left: 50%;
-
     transform: translate(-50%, 100%);
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     border-radius: 4px;
-
     z-index: 3;
-
     opacity: 0;
     visibility: hidden;
-
     animation: letterAppear 1.5s ease 1s forwards;
 }
 
 .letter .couple-names {
     color: #1a080b;
-
     font-size: 22px;
     font-weight: 800;
-
     padding: 8px 15px;
-
     border-top: 1px solid #e63946;
     border-bottom: 1px solid #e63946;
 }
@@ -145,7 +119,6 @@ body {
 ============================== */
 
 @keyframes letterAppear {
-
     from {
         opacity: 0;
         visibility: hidden;
@@ -157,23 +130,19 @@ body {
         visibility: visible;
         transform: translate(-50%, -75%);
     }
-
 }
 
 /* ==============================
    7. Envelope Front
 ============================== */
-
 .envelope-content {
     position: absolute;
     inset: 0;
-
     background: linear-gradient(
         145deg,
         #390b16,
         #16060a
     );
-
     clip-path: polygon(
         0 0,
         50% 55%,
@@ -181,38 +150,27 @@ body {
         100% 100%,
         0 100%
     );
-
     z-index: 2;
 }
 
 /* ==============================
    8. Envelope Seal
 ============================== */
-
 .envelope-seal {
     position: absolute;
-
     top: 50%;
     left: 50%;
-
     transform: translate(-50%, -50%);
-
     width: 42px;
     height: 42px;
-
     background: #e63946;
-
     border: 2px solid #8b1728;
     border-radius: 50%;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     box-shadow: 0 0 18px rgba(230, 57, 70, 0.5);
-
     z-index: 4;
-
     animation: heartPulse 1.8s ease-in-out infinite;
 }
 
@@ -224,9 +182,7 @@ body {
 /* ==============================
    9. Envelope Entrance Animation
 ============================== */
-
 @keyframes envelopeEntrance {
-
     from {
         opacity: 0;
         transform: translateY(-100px);
@@ -236,15 +192,12 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-
 }
 
 /* ==============================
    10. Envelope Floating Animation
 ============================== */
-
 @keyframes envelopeFloat {
-
     0%, 100% {
         transform: translateY(0);
     }
@@ -252,15 +205,12 @@ body {
     50% {
         transform: translateY(-10px);
     }
-
 }
 
 /* ==============================
    11. Heart Glow Animation
 ============================== */
-
 @keyframes heartPulse {
-
     0%, 100% {
         box-shadow: 0 0 12px rgba(230, 57, 70, 0.4);
     }
@@ -268,13 +218,11 @@ body {
     50% {
         box-shadow: 0 0 28px rgba(230, 57, 70, 0.9);
     }
-
 }
 
 /* ==============================
    12. Couple Title
 ============================== */
-
 .couple-title {
     font-size: 30px;
     font-weight: 700;
@@ -285,83 +233,55 @@ body {
 /* ==============================
    13. Open Letter Button
 ============================== */
-
 .open-letter-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 12px;
-
     padding: 12px 30px;
-
     background: #e63946;
     color: #fff;
-
     text-decoration: none;
-
     border-radius: 8px;
-
     font-size: 16px;
     font-weight: 700;
-
     transition: 0.3s ease;
-
     box-shadow: 0 0 15px rgba(230, 57, 70, 0.2);
 }
 
 .open-letter-btn:hover {
     background: #b91f30;
-
     box-shadow: 0 0 25px rgba(230, 57, 70, 0.5);
-
     transform: translateY(-3px);
 }
 
 /* ==============================
    14. Description
 ============================== */
-
 .description {
     font-size: 14px;
     color: #ccc;
 }
 
-
 /* ==============================
-   15. Main Layout With QR Codes
+   15. QR Code Card
 ============================== */
-
-.main-container {
-    gap: 65px;
-}
-
-/* ==============================
-   16. QR Code Cards
-============================== */
-
 .qr-card {
+    order: 2;
     width: 175px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     gap: 12px;
-
+    margin: 0;
     padding: 18px 12px;
-
     background: rgba(20, 10, 12, 0.85);
-
     border: 1px solid rgba(230, 57, 70, 0.4);
     border-radius: 12px;
-
-    box-shadow:
-        0 0 20px rgba(230, 57, 70, 0.12);
-
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.12);
     backdrop-filter: blur(8px);
-
     text-align: center;
+    flex-shrink: 0;
 }
 
 .qr-card h4 {
@@ -376,74 +296,53 @@ body {
 }
 
 /* QR Code Container */
-
-#qr-left,
-#qr-right {
+#qr-left {
     width: 125px;
     height: 125px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding: 8px;
-
     background: #fff;
     border-radius: 8px;
 }
 
-
 /* ==============================
-   18. QR Download Button
+   16. QR Download Button
 ============================== */
-
 .qr-download-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 7px;
-
     padding: 8px 14px;
-
     background: #e63946;
     color: #fff;
-
     border: none;
     border-radius: 6px;
-
     font-family: 'Cairo', sans-serif;
     font-size: 12px;
     font-weight: 700;
-
     cursor: pointer;
-
     transition: 0.3s ease;
 }
 
 .qr-download-btn:hover {
     background: #b91f30;
     transform: translateY(-2px);
-
     box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
 }
 
-
 /* ==============================
-   19. Responsive Design
-   iPhone 12 Pro Max
+   17. Responsive Design
    Redmi Note 9S
 ============================== */
-
-/* Redmi Note 9S */
 @media screen and (max-width: 414px) {
 
     .main-container {
         flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-
-        padding: 30px 15px;
+        gap: 30px;
+        padding: 35px 15px;
     }
 
     .content {
@@ -475,40 +374,23 @@ body {
         font-size: 13px;
     }
 
-    .qr-left {
-        order: 2;
-    }
-
-    .qr-right {
-        order: 3;
-    }
-
     .qr-card {
+        order: 2;
         width: 170px;
         padding: 14px 10px;
         gap: 10px;
     }
-
-    #qr-left,
-    #qr-right {
-        width: 125px;
-        height: 125px;
-    }
-
-    .qr-download-btn {
-        padding: 7px 13px;
-        font-size: 12px;
-    }
 }
 
-/* iPhone 12 Pro Max */
+/* ==============================
+   18. Responsive Design
+   iPhone 12 Pro Max
+============================== */
 @media screen and (min-width: 415px) and (max-width: 428px) {
 
     .main-container {
         flex-direction: column;
-        justify-content: center;
-        gap: 22px;
-
+        gap: 30px;
         padding: 35px 15px;
     }
 
@@ -541,28 +423,10 @@ body {
         font-size: 13px;
     }
 
-    .qr-left {
-        order: 2;
-    }
-
-    .qr-right {
-        order: 3;
-    }
-
     .qr-card {
+        order: 2;
         width: 170px;
         padding: 14px 10px;
         gap: 10px;
-    }
-
-    #qr-left,
-    #qr-right {
-        width: 125px;
-        height: 125px;
-    }
-
-    .qr-download-btn {
-        padding: 7px 13px;
-        font-size: 12px;
     }
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مصطفى & حبيبة ❤️</title>
+    <title>Loving | Website</title>
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,12 +17,12 @@
 
 <body>
     <main class="main-container">
-
-        <!-- Left QR Code -->
-        <div class="qr-card qr-left">
+<!-- Right QR Code -->
+        <div class="qr-card">
             <h4>امسحي الكود</h4>
             <div id="qr-left"></div>
             <p>افتحي الحكاية من هنا</p>
+
             <button class="qr-download-btn" onclick="downloadQR('qr-left')">
                 <i class="fa-solid fa-download"></i>
                 تحميل QR
@@ -31,7 +31,6 @@
 
         <!-- Main Content -->
         <div class="content">
-
             <!-- Envelope -->
             <div class="envelope">
                 <div class="letter">
@@ -46,10 +45,8 @@
                     <i class="fa-solid fa-heart"></i>
                 </div>
             </div>
-
             <!-- Title -->
             <h3 class="couple-title">مصطفى & حبيبه</h3>
-
             <!-- Open Letter Button -->
             <a href="memories.html" class="open-letter-btn">
                 <span>افتحي الحكاية</span>
@@ -60,20 +57,7 @@
             <p class="description">
                 اضغطي على الزرار علشان تفتحي الحكاية
             </p>
-
         </div>
-
-        <!-- Right QR Code -->
-        <div class="qr-card qr-right">
-            <h4>امسحي الكود</h4>
-            <div id="qr-right"></div>
-            <p>افتحي الحكاية من هنا</p>
-            <button class="qr-download-btn" onclick="downloadQR('qr-left')">
-                <i class="fa-solid fa-download"></i>
-                تحميل QR
-            </button>
-        </div>
-
     </main>
 
 <!-- QR Code Library -->
@@ -81,68 +65,48 @@
 <script>
 
     /* ==============================
-       3. Generate QR Codes
+       3. Generate QR Code
     ============================== */
+        const websiteURL = "https://mostafa-dishaa.github.io/loving-website/";
 
-    const websiteURL = "https://mostafa-dishaa.github.io/loving-website/";
+        new QRCode(document.getElementById("qr-left"), {
+            text: websiteURL,
+            width: 109,
+            height: 109,
+            colorDark: "#090909",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
 
-    // Left QR Code
-    new QRCode(document.getElementById("qr-left"), {
-        text: websiteURL,
-        width: 109,
-        height: 109,
-        colorDark: "#090909",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H
-    });
+        /* ==============================
+           4. Download QR Code
+        ============================== */
+        function downloadQR(qrId) {
 
-    // Right QR Code
-    new QRCode(document.getElementById("qr-right"), {
-        text: websiteURL,
-        width: 109,
-        height: 109,
-        colorDark: "#090909",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H
-    });
+            const qrContainer = document.getElementById(qrId);
 
+            const qrCanvas = qrContainer.querySelector("canvas");
+            const qrImage = qrContainer.querySelector("img");
 
-    /* ==============================
-       4. Download QR Code
-    ============================== */
+            let imageURL;
+            if (qrCanvas) {
+                imageURL = qrCanvas.toDataURL("image/png");
+            }
+            else if (qrImage) {
+                imageURL = qrImage.src;
+            }
+            else {
+                alert("QR Code is not ready yet!");
+                return;
+            }
 
-    function downloadQR(qrId) {
-
-        const qrContainer = document.getElementById(qrId);
-
-        const qrCanvas = qrContainer.querySelector("canvas");
-        const qrImage = qrContainer.querySelector("img");
-
-        let imageURL;
-
-        if (qrCanvas) {
-            imageURL = qrCanvas.toDataURL("image/png");
+            const downloadLink = document.createElement("a");
+            downloadLink.href = imageURL;
+            downloadLink.download = "Loving-Website-QR.png";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
         }
-        else if (qrImage) {
-            imageURL = qrImage.src;
-        }
-        else {
-            alert("QR Code is not ready yet!");
-            return;
-        }
-
-        const downloadLink = document.createElement("a");
-
-        downloadLink.href = imageURL;
-        downloadLink.download = "Loving-Website-QR.png";
-
-        document.body.appendChild(downloadLink);
-
-        downloadLink.click();
-
-        document.body.removeChild(downloadLink);
-    }
-
 </script>
 </body>
 
